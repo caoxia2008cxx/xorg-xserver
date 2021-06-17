@@ -629,7 +629,7 @@ AllocNewConnection(XtransConnInfo trans_conn, int fd, CARD32 conn_time)
     }
     client->local = ComputeLocalClient(client);
     ospoll_add(server_poll, fd,
-               ospoll_trigger_edge,
+               ospoll_trigger_level,
                ClientReady,
                client);
     set_poll_client(client);
